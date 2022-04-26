@@ -39,13 +39,13 @@ export class User {
   })
   language: string;
 
-  @Column()
+  @Column({ name: 'created_at' })
   @CreateDateColumn()
-  created_at: Date;
+  createdAt: Date;
 
-  @Column()
+  @Column({ name: 'updated_at' })
   @UpdateDateColumn()
-  updated_at: Date;
+  updatedAt: Date;
 
   setLanguage(language: Language) {
     this.language = language;
