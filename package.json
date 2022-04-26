@@ -15,6 +15,7 @@
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown .",
     "test": "NODE_PATH=./src mocha --require ts-node/register 'src/**/*.test.ts' --timeout 20000 --exit",
     "commit": "git-cz",
+    "docker:db": "docker-compose --file docker-compose.db.yml --compatibility up --build",
     "docker:dev": "docker-compose --file docker-compose.yml --file docker-compose.dev.yml --compatibility up --build",
     "docker:stage": "docker-compose --file docker-compose.yml --file docker-compose.stage.yml --compatibility up --build",
     "docker:prod": "docker-compose --file docker-compose.yml --file docker-compose.prod.yml --compatibility up --build",
