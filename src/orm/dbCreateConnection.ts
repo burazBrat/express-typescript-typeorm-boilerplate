@@ -15,3 +15,12 @@ export const dbCreateConnection = async (): Promise<Connection | null> => {
   }
   return null;
 };
+
+export const connectToDB = async (): Promise<Connection | null> => {
+  try {
+    await dbCreateConnection();
+  } catch (err) {
+    console.log(err);
+  }
+  return null;
+};

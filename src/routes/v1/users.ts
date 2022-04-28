@@ -5,9 +5,13 @@ import { checkJwt } from 'middleware/checkJwt';
 import { checkRole } from 'middleware/checkRole';
 import { validatorEdit } from 'middleware/validation/users';
 
+import { UserController } from '../../controllers/users/user.controller';
+
 const router = Router();
 
-router.get('/', [], list);
+// const userController = new UserController();
+
+router.get('/', [], new UserController().list);
 
 router.get('/:id([0-9]+)', [], show);
 

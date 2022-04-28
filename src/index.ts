@@ -12,8 +12,12 @@ import morgan from 'morgan';
 import './utils/response/customSuccess';
 import { errorHandler } from './middleware/errorHandler';
 import { getLanguage } from './middleware/getLanguage';
-import { dbCreateConnection } from './orm/dbCreateConnection';
+import { connectToDB, dbCreateConnection } from './orm/dbCreateConnection';
 import routes from './routes';
+
+dbCreateConnection().then(() => console.log('Connect to db'));
+
+console.log('TEst');
 
 export const app = express();
 app.use(cors());
@@ -39,7 +43,3 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-(async () => {
-  await dbCreateConnection();
-})();
